@@ -8,6 +8,10 @@
     <title>FlitBit.IoC.Owin</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Middleware for setting up FlitBit's container per Http Request</description>
+    <dependencies>
+      <dependency id="FlitBit.IoC.Web.Common"/>
+      <dependency id="Microsoft.Owin"/>
+    </dependencies>
   </metadata>
   <files>
     <file src="Content\ExternalWireup\Dependency.FlitBit.IoC.Owin.cs.pp" target="Content\ExternalWireup\"/>
