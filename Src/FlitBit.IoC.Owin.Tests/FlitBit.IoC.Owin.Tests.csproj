@@ -81,7 +81,7 @@
     <Compile Include="ExternalWireup\Dependency.FlitBit.IoC.cs" />
     <Compile Include="ExternalWireup\Dependency.FlitBit.IoC.Web.Common.cs" />
     <Compile Include="ExternalWireup\Dependency.FlitBit.Wireup.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="FlitBitContainerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wireup.cs" />
   </ItemGroup>
