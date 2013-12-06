@@ -5,17 +5,15 @@ namespace FlitBit.IoC.Owin
 {
     public class FlitBitMiddleware : OwinMiddleware
     {
-        readonly CreationContextOptions _creationContextOptions;
 
-        public FlitBitMiddleware(OwinMiddleware next, CreationContextOptions creationContextOptions = CreationContextOptions.InstanceTracking)
+        public FlitBitMiddleware(OwinMiddleware next)
             : base(next)
         {
-            _creationContextOptions = creationContextOptions;
         }
 
         public override async Task Invoke(IOwinContext context)
         {
-            Container.Current.MakeChildContainer(_creationContextOptions);
+            Container.Current.MakeChildContainer(CreationContextOptions.InstanceTracking);
             await Next.Invoke(context);
         }
     }
