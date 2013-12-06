@@ -11,6 +11,7 @@
     <AssemblyName>FlitBit.IoC.Owin</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuSpecFile>FlitBit.IoC.Owin.nuspec</NuSpecFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,20 +43,15 @@
     <Reference Include="FlitBit.IoC">
       <HintPath>packages\FlitBit.IoC.2.13.1\lib\net40\FlitBit.IoC.dll</HintPath>
     </Reference>
-    <Reference Include="FlitBit.IoC.Web.Common">
-      <HintPath>packages\FlitBit.IoC.Web.Common.1.0.3\lib\net45\FlitBit.IoC.Web.Common.dll</HintPath>
+    <Reference Include="FlitBit.IoC.Web.Common, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\FlitBit.IoC.Web.Common.1.0.4\lib\net45\FlitBit.IoC.Web.Common.dll</HintPath>
     </Reference>
     <Reference Include="FlitBit.Wireup">
       <HintPath>packages\FlitBit.Wireup.3.1.0\lib\net40\FlitBit.Wireup.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin">
       <HintPath>packages\Microsoft.Owin.2.0.2\lib\net45\Microsoft.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.HttpListener">
-      <HintPath>packages\Microsoft.Owin.Host.HttpListener.2.0.2\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Hosting">
-      <HintPath>packages\Microsoft.Owin.Hosting.2.0.2\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
@@ -73,15 +69,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBuilderExtensions.cs" />
-    <Compile Include="Constants.cs" />
+    <Compile Include="ExternalWireup\Dependency.FlitBit.IoC.Web.Common.cs" />
     <Compile Include="FlitBitMiddleware.cs" />
     <Compile Include="ExternalWireup\Dependency.FlitBit.IoC.cs" />
     <Compile Include="ExternalWireup\Dependency.FlitBit.Wireup.cs" />
-    <Compile Include="FlitBitServiceProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wireup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="FlitBit.IoC.Owin.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

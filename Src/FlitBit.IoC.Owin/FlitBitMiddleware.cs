@@ -12,8 +12,7 @@ namespace FlitBit.IoC.Owin
 
         public override async Task Invoke(IOwinContext context)
         {
-            var serviceProvider = Container.Root.MakeChildContainer(CreationContextOptions.None);
-            context.Set(Constants.ServiceProvider, serviceProvider);
+            Container.Current.MakeChildContainer(CreationContextOptions.None);
             await Next.Invoke(context);
         }
     }
