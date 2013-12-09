@@ -5,7 +5,6 @@ namespace FlitBit.IoC.Owin
 {
     public class FlitBitMiddleware : OwinMiddleware
     {
-
         public FlitBitMiddleware(OwinMiddleware next)
             : base(next)
         {
@@ -13,7 +12,9 @@ namespace FlitBit.IoC.Owin
 
         public override async Task Invoke(IOwinContext context)
         {
-            Container.Current.MakeChildContainer(CreationContextOptions.InstanceTracking);
+
+            var container = Container.Current.MakeChildContainer(CreationContextOptions.InstanceTracking);
+            OwinContainerHelpers.Current = container;
             await Next.Invoke(context);
         }
     }

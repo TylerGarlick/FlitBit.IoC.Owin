@@ -9,4 +9,4 @@ namespace FlitBit.IoC.Owin.Tests
             WireupCoordinator.SelfConfigure();
         }
     }
-}
+} 

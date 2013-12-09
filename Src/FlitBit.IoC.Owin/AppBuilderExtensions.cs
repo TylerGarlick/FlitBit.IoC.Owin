@@ -6,6 +6,7 @@ namespace FlitBit.IoC.Owin
     {
         public static void RegisterPerHttpContainer(this IAppBuilder app, IContainer container)
         {
+            app.UseRequestScopeContext();
             app.Use<FlitBitMiddleware>();
         }
     }
